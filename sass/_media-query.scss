@@ -1,0 +1,26 @@
+nav{
+  #logo{
+    span{
+      @if $type == xs {
+        display: none
+      }
+      @if $type == sm{
+        display: none
+      }
+      @if $type == md or $type == lg {
+      }
+    }
+  }
+  #navbar{
+    span{
+      @if $type == xs {
+        display: none
+      }
+      @if $type == sm{
+        display: none
+      }
+      @if $type == md or $type == lg {
+      }
+    }
+  }
+}

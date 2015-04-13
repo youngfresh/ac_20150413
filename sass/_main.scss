@@ -1,0 +1,96 @@
+@import "compass";
+@include global-reset;
+
+@mixin compass-font-size($size, $rhythm-unit: "rem") {
+    @include output-rhythm(font-size, convert-length($size, $rhythm-unit));
+}
+
+$fontFamily : "futura","Helvetica Neue",Helvetica,Arial,"Hiragino Kaku Gothic Pro",Meiryo,"MS PGothic",sans-serif;
+
+$baseColor : #00a7d8;
+$baseColorOn :#0093cc;
+
+$subColor : #f73c19;
+$bgColor : #e5f6fb;
+
+$textColor : #2e3540;
+
+$linkColor : #019bdd;
+$linkColor_visited : #019bdd;
+$linkColor_hover : #019bdd;
+
+.clearfix:after{content:"";display:block;clear:both;} /* IE8, ModanBrowser */
+.clearfix {width:100%;} /* clearfix IE 6, 7 */
+
+body{
+  font-family:$fontFamily;
+  color:$textColor;
+  background: $bgColor;
+  a{
+    color:$linkColor;
+    text-decoration: underline;
+    &:hover{
+      text-decoration: none;
+    }
+    img{
+      vertical-align: bottom;
+    }
+  }
+}
+
+nav{
+  background: $baseColor;
+  .navbar-header{
+    float: left;
+  }
+  .navbar-collapse{
+    float: right;
+  }
+  a{
+    text-decoration: none;
+    color: #fff;
+  }
+  #logo{
+    padding: 0;
+    i{
+      background: $baseColorOn;
+      display: inline-block;
+      padding: 8px 18px;
+      img{
+      }
+    }
+  }
+  .container-fluid{
+    padding: 0;
+  }
+  li{
+    float: left;
+    i{}
+    &.phone{
+      i{}
+    }
+    &.envelope{
+      background: $baseColorOn;
+      i{}
+    }
+  }
+}
+
+$type: xs sm md lg;
+@import "media-query";
+@media only screen and (max-width:766px) {
+ $type: xs;
+ @import "media-query"
+}
+@media only screen and (max-width:750px) {
+ $type: sm;
+ @import "media-query"
+}
+@media only screen and (min-width:970px) and (max-width:1169px) {
+ $type: md;
+ @import "media-query"
+}
+@media only screen and (min-width:1170px) {
+ $type: lg;
+ @import "media-query"
+}
